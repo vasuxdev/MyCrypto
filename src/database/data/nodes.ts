@@ -105,7 +105,14 @@ export const NODES_CONFIG: { [key in NetworkId]: StaticNodeConfig[] } = {
       url: 'https://www.ethercluster.com/etc'
     }
   ],
-
+  DOGE: [
+    {
+      name: NetworkUtils.makeNodeName('DOGE', 'dogechain.info'),
+      type: NodeType.DOGECHAIN,
+      service: 'DOGE dogechain.info',
+      url: 'https://dogechain.info/api/v1/'
+    }
+  ],
   RSK: [
     {
       name: NetworkUtils.makeNodeName('RSK', 'rsk_mainnet'),
