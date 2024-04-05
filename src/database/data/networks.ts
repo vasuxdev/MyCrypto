@@ -7,6 +7,7 @@ import {
   DEFAULT_AVAXC,
   DEFAULT_BSC,
   DEFAULT_CLO,
+  DEFAULT_DOGE,
   DEFAULT_EGEM,
   DEFAULT_ETC,
   DEFAULT_ETH,
@@ -206,6 +207,34 @@ export const NETWORKS_CONFIG: NetworkConfig = {
     gasPriceSettings: {
       min: 0.1,
       max: 10,
+      initial: 1
+    }
+  },
+  DOGE: {
+    id: 'DOGE',
+    name: 'DOGECOIN',
+    unit: 'DOGE' as TTicker,
+    chainId: 69,
+    isCustom: false,
+    color: '#669073',
+    blockExplorer: makeExplorer({
+      name: 'DogeChain',
+      origin: 'https://dogechain.info',
+      addressPath: 'address'
+    }),
+    tokens: [],
+    contracts: require('./contracts/doge.json'),
+    dPaths: {
+      [WalletId.TREZOR]: DEFAULT_DOGE,
+      [WalletId.LEDGER_NANO_S]: LEDGER_DOGE,
+      [WalletId.TREZOR_NEW]: DEFAULT_DOGE,
+      [WalletId.LEDGER_NANO_S_NEW]: LEDGER_DOGE,
+      [WalletId.GRIDPLUS]: DEFAULT_DOGE,
+      default: DEFAULT_DOGE
+    },
+    gasPriceSettings: {
+      min: 0.001,
+      max: 1,
       initial: 1
     }
   },
